@@ -1,31 +1,35 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <a href="#">
-                <div class="card">
-                    <div class="card-header">Title</div>
-                    <div class="card-body">Description</div>
-                    <div class="card-footer mt-auto"><a href="#"><i class="fa fa-trash fa-2x"></i></a>
-                    </div>
-                </div>
-            </a>
+  <div class="row">
+    {% for note in notes %}
+    <div class="col-md-3">
+      <a href="#">
+        <div class="card">
+          <div class="card-header">{{note.Title}}</div>
+          <div class="card-body">{{note.Description|slice:"0:100"}}</div>
+          <div class="card-footer mt-auto">
+            <a href="#"><i class="fa fa-trash fa-2x"></i></a>
+          </div>
         </div>
-        <br> <br>
+      </a>
     </div>
+    {% endfor %}
+    <br />
+    <br />
+  </div>
 </div>
-<br> <br>
+<br />
+<br />
 <div class="container">
-    <form method="POST">
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Creates Notes</legend>
-        </fieldset>
-        <div class="form-group">
-            <button href="" class="btn btn-outline-info">Create</button>
-        </div>
-    </form>
+  <form method="POST">
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Creates Notes</legend>
+    </fieldset>
+    {{form}}
+    <div class="form-group">
+      <button href="" class="btn btn-outline-info">Create</button>
+    </div>
+  </form>
 </div>
 {% endblock content %}
