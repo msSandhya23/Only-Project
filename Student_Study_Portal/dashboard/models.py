@@ -11,6 +11,6 @@ class Notes(models.Model):
         return self.title
     
     class Meta:
-        verbose_name = 'Notes'
-        verbose_name_plural = 'Notes'
+        verbose_name = 'notes'
+        verbose_name_plural = 'notes'
      
