@@ -23,5 +23,5 @@ def delete_note(request,pk=None):
     Notes.objects.get(id=pk).delete()
     return redirect('notes')
 
-def NotesDetailView(generic.DetailView):
-    model = Notes
+#class NotesDetailView(generic.DetailView):
+    #model = Notes
