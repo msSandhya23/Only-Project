@@ -1,0 +1,17 @@
+<!-- filepath: c:\Users\sandh\OneDrive\Desktop\PROJECT\Student_Study_Portal\templates\note_detail.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ note.title }}</h2>
+    </div>
+    <div class="card-body">
+      <p>{{ note.description }}</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'notes' %}" class="btn btn-secondary">Back to Notes</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

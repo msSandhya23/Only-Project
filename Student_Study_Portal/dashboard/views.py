@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import *
 from django.contrib import messages
 from django.views import generic
+from .models import Notes
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -25,3 +26,5 @@ def delete_note(request,pk=None):
 
 class NotesDetailView(generic.DetailView):
     model = Notes
+    template_name = 'notes_detail.html'
+    context_object_name = 'note'
