@@ -36,9 +36,11 @@
                             </h6>
                             {% endif %}
                             {% if result.count %}
-                            <h6 class="ml-0 mt-3">Pages: 100</h6>
+                            <h6 class="ml-0 mt-3">Pages: {{result.count}}</h6>
                             {% endif %}
-                            <h6 class="ml-0 mt-3">Rating: 4</h6>
+                            {% if result.rating %}
+                            <h6 class="ml-0 mt-3">Rating: {{result.rating}}</h6>
+                            {% endif %}
                         </b>
                         
                     </div>
@@ -46,6 +48,6 @@
             </div>
         </div>
     </a>
-{% enfdor %}
+{% endfor %}
 </section>
 {% endblock content %}
