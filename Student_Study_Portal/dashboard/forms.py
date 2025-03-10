@@ -22,3 +22,19 @@ class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = ['title','is_finished']
+        
+class ConversionForm(forms.Form):
+    CHOICES = [('length','Length'),('mass','Mass')]
+    measurement = forms.ChoiceField(choices=CHOICES,widget=forms.RadioSelect)
+
+class ConversionLengthForm(forms.Form):
+    CHOICES = [('yard','Yard'),('foot','Foot')]
+    input = forms.ChoiceField(required=False,label=False,widget=forms.TextInput(attrs={'type':'number','placeholder':'Enter the Number'}))
+    measure1 = forms.ChoiceField(label='',widget=forms.Select(choices=CHOICES))
+    measure2 = forms.ChoiceField(label='',widget=forms.Select(choices=CHOICES))
+    
+class ConversionMassForm(forms.Form):
+    CHOICES = [('pound','pound'),('kilogram','kilogram')]
+    input = forms.ChoiceField(required=False,label=False,widget=forms.TextInput(attrs={'type':'number','placeholder':'Enter the Number'}))
+    measure1 = forms.ChoiceField(label='',widget=forms.Select(choices=CHOICES))
+    measure2 = forms.ChoiceField(label='',widget=forms.Select(choices=CHOICES))
