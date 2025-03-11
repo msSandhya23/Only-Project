@@ -266,7 +266,7 @@ def conversion(request):
                 context = {
                     'form':form,
                     'm_form':measurement_form,
-                    'input':input,
+                    'input':True,
                     'answer':answer
                 }
         if request.POST['measurement'] == 'mass':
@@ -282,7 +282,7 @@ def conversion(request):
                 input = request.POST['input']
                 answer = ''
                 if input and int(input) >= 0:
-                    if first == 'ponud' and second == 'kilogram':
+                    if first == 'pounud' and second == 'kilogram':
                         answer = f'{input} pound = {int(input)*0.453592} kilogram'
                     if first == 'kilogram' and second == 'pound':
                         answer = f'{input} kilogram = {int(input)*2.20462} pound'
