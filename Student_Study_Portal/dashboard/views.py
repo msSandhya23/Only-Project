@@ -311,4 +311,23 @@ def register(request):
     context = {'form':form}
     return render(request,'register.html',context)
 
+def profile(request):
+    homeworks = Homework.objects.filter(is_finished=False,User=request.user)
+    todos = Todo.objects.filter(is_finished=False,User=request.user)
+    if len(homework) == 0:
+        homework_done = True
+    else:
+        homework_done = False
+    if len(todos) == 0:
+        todos_done = True
+    else:
+        todos_done = False
+    context = {
+        'homeworks':homeworks,
+        'todos':todos,
+        'homework_done':homework_done,
+        'todos_done':todos_done
+    }
+    return render(request,'profile.html',context)
+
     
