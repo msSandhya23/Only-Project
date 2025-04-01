@@ -39,12 +39,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
+                  <a class="nav-link active" aria-current="page" href="/"
                     >Home</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Profile</a>
+                  <a class="nav-link" href="/profile">Profile</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -58,14 +58,14 @@
                     Options
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Books</a>
-                    <a class="dropdown-item" href="#">Wikipidia</a>
+                    <a class="dropdown-item" href="/books">Books</a>
+                    <a class="dropdown-item" href="/wiki">Wikipidia</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Dictionary</a>
-                    <a class="dropdown-item" href="#">Youtube</a>
+                    <a class="dropdown-item" href="/dictionary">Dictionary</a>
+                    <a class="dropdown-item" href="/youtube">Youtube</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">To-Do</a>
-                    <a class="dropdown-item" href="#">Homework</a>
+                    <a class="dropdown-item" href="/todo">To-Do</a>
+                    <a class="dropdown-item" href="/homework">Homework</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/notes">Notes</a>
                     <a class="dropdown-item" href="#">Conversion</a>
@@ -77,7 +77,7 @@
                   <a class="nav-link disabled" href="#">Logout</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Register</a>
+                  <a class="nav-link disabled" href="/register">Register</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#">Login</a>
@@ -90,13 +90,9 @@
     </header>
     <br /><br />
     <main>
-      {% if messages %} 
-        {% for msg in messages %}
-          <div class="alert alert-{{msg.tags}}">{{msg}}</div>
-        {% endfor %} 
-      {% endif%} 
-      {% block content %} 
-      {% endblock %}
+      {% if messages %} {% for msg in messages %}
+      <div class="alert alert-{{msg.tags}}">{{msg}}</div>
+      {% endfor %} {% endif%} {% block content %} {% endblock %}
     </main>
 
     <script
